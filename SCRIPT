@@ -1,0 +1,104 @@
+local Players = game:GetService("Players")
+local localPlayer = Players.LocalPlayer
+
+local function setupCharacter(character, player)
+    if player == localPlayer then return end -- No aplicar al cliente
+
+    -- Esperar partes importantes
+    local head = character:WaitForChild("Head", 5)
+    local hrp = character:WaitForChild("HumanoidRootPart", 5)
+    if not head or not hrp then return end
+
+    -- Highlight verde
+    local highlight = character:FindFirstChild("Highlight")
+    if not highlight then
+        highlight = Instance.new("Highlight")
+        highlight.Name = "Highlight"
+        highlight.Adornee = character
+        highlight.FillColor = Color3.fromRGB(0, 255, 0)
+        highlight.OutlineTransparency = 1
+        highlight.Parent = character
+    end
+
+    -- Billboard con nombre
+    local billboard = head:FindFirstChild("NameBillboard")
+    if not billboard then
+        billboard = Instance.new("BillboardGui")
+        billboard.Name = "NameBillboard"
+        billboard.Adornee = head
+        billboard.Size = UDim2.new(0, 200, 0, 50)
+        billboard.StudsOffset = Vector3.new(0, 2, 0)
+        billboard.AlwaysOnTop = true
+        billboard.Parent = head
+
+        local textLabel = Instance.new("TextLabel")
+        textLabel.Name = "NameLabel"
+        textLabel.Size = UDim2.new(1, 0, 1, 0)
+        textLabel.BackgroundTransparency = 1
+        textLabel.TextColor3 = Color3.fromRGB(0, 255, 0)
+        textLabel.TextStrokeTransparency = 0.5
+        textLabel.TextScaled = true
+        textLabel.Font = Enum.Font.GothamBold
+        textLabel.Text = player.Name
+        textLabel.Parent = billboard
+    end
+
+    local nameLabel = billboard:WaitForChild("NameLabel")
+
+    -- Marco centrado en el cuerpo
+    local boxGui = hrp:FindFirstChild("BoxBillboard")
+    if not boxGui then
+        boxGui = Instance.new("BillboardGui")
+        boxGui.Name = "BoxBillboard"
+        boxGui.Adornee = hrp
+        boxGui.Size = UDim2.new(6, 0, 10, 0)
+        boxGui.StudsOffset = Vector3.new(0, 0, 0)
+        boxGui.AlwaysOnTop = true
+        boxGui.Parent = hrp
+
+        local frame = Instance.new("Frame")
+        frame.Name = "Frame"
+        frame.Size = UDim2.new(1, 0, 1, 0)
+        frame.BackgroundTransparency = 1
+        frame.BorderSizePixel = 0
+        frame.Parent = boxGui
+
+        local stroke = Instance.new("UIStroke")
+        stroke.Thickness = 3
+        stroke.Color = Color3.fromRGB(0, 255, 0)
+        stroke.Parent = frame
+    end
+
+    -- Mantener verde
+    highlight.FillColor = Color3.fromRGB(0, 255, 0)
+    nameLabel.TextColor3 = Color3.fromRGB(0, 255, 0)
+    local frame = boxGui:FindFirstChild("Frame")
+    if frame then
+        local stroke = frame:FindFirstChild("UIStroke")
+        if stroke then
+            stroke.Color = Color3.fromRGB(0, 255, 0)
+        end
+    end
+end
+
+-- Para nuevos jugadores
+Players.PlayerAdded:Connect(function(player)
+    player.CharacterAdded:Connect(function(char)
+        setupCharacter(char, player)
+    end)
+end)
+
+-- Para jugadores existentes
+for _, player in ipairs(Players:GetPlayers()) do
+    if player ~= localPlayer then
+        if player.Character then
+            -- Esperar hasta que el Character esté completamente cargado
+            player.Character:WaitForChild("Head", 5)
+            player.Character:WaitForChild("HumanoidRootPart", 5)
+            setupCharacter(player.Character, player)
+        end
+        player.CharacterAdded:Connect(function(char)
+            setupCharacter(char, player)
+        end)
+    end
+end
