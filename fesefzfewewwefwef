@@ -1,0 +1,35 @@
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local rootPart = character:WaitForChild("HumanoidRootPart")
+
+-- Generar nombre único
+local baseName = "parteleportasset"
+local index = 1
+local name = baseName .. index
+
+while workspace:FindFirstChild(name) do
+	index += 1
+	name = baseName .. index
+end
+
+-- Crear la Part
+local part = Instance.new("Part")
+part.Size = Vector3.new(4, 1, 4)
+part.Anchored = true
+part.CanCollide = false
+part.Position = rootPart.Position
+part.BrickColor = BrickColor.new("Bright green")
+part.Name = name
+part.Parent = workspace
+
+-- Copiar posición al portapapeles
+local pos = rootPart.Position
+local coordText = string.format("Vector3.new(%.2f, %.2f, %.2f)", pos.X, pos.Y, pos.Z)
+
+if setclipboard then
+	setclipboard(coordText)
+	print("Coordenadas copiadas al portapapeles:", coordText)
+else
+	warn("No se pudo copiar: setclipboard no disponible.")
+end
