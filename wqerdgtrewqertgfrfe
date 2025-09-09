@@ -1,0 +1,398 @@
+--[=[
+ d888b  db    db d888888b      .d888b.      db      db    db  .d8b.  
+88' Y8b 88    88   `88'        VP  `8D      88      88    88 d8' `8b 
+88      88    88    88            odD'      88      88    88 88ooo88 
+88  ooo 88    88    88          .88'        88      88    88 88~~~88 
+88. ~8~ 88b  d88   .88.        j88.         88booo. 88b  d88 88   88    @uniquadev
+ Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER 
+]=]
+
+-- Instances: 32 | Scripts: 5 | Modules: 0 | Tags: 0
+local G2L = {};
+
+-- StarterGui.ScreenGui
+G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
+G2L["1"]["IgnoreGuiInset"] = true;
+G2L["1"]["ScreenInsets"] = Enum.ScreenInsets.DeviceSafeInsets;
+G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
+
+
+-- StarterGui.ScreenGui.CATRIXSCRIPTS02
+G2L["2"] = Instance.new("Frame", G2L["1"]);
+G2L["2"]["BorderSizePixel"] = 0;
+G2L["2"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["2"]["Size"] = UDim2.new(0, 401, 0, 370);
+G2L["2"]["Position"] = UDim2.new(0.30844, 4, 0.17733, 0);
+G2L["2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2"]["Name"] = [[CATRIXSCRIPTS02]];
+
+
+-- StarterGui.ScreenGui.CATRIXSCRIPTS02.RotateUIGradient
+G2L["3"] = Instance.new("LocalScript", G2L["2"]);
+G2L["3"]["Name"] = [[RotateUIGradient]];
+
+
+-- StarterGui.ScreenGui.CATRIXSCRIPTS02.UICorner
+G2L["4"] = Instance.new("UICorner", G2L["2"]);
+G2L["4"]["CornerRadius"] = UDim.new(0.1, 8);
+
+
+-- StarterGui.ScreenGui.CATRIXSCRIPTS02.UIGradient
+G2L["5"] = Instance.new("UIGradient", G2L["2"]);
+G2L["5"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(22, 22, 22)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(54, 54, 54))};
+
+
+-- StarterGui.ScreenGui.CATRIXSCRIPTS02.ImageLabel
+G2L["6"] = Instance.new("ImageLabel", G2L["2"]);
+G2L["6"]["BorderSizePixel"] = 0;
+G2L["6"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+-- [ERROR] cannot convert ImageContent, please report to "https://github.com/uniquadev/GuiToLuaConverter/issues"
+G2L["6"]["Image"] = [[rbxassetid://80861266490579]];
+G2L["6"]["Size"] = UDim2.new(0, 100, 0, 100);
+G2L["6"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["6"]["Position"] = UDim2.new(0.37114, 0, 0.09084, 0);
+
+
+-- StarterGui.ScreenGui.CATRIXSCRIPTS02.ImageLabel.UICorner
+G2L["7"] = Instance.new("UICorner", G2L["6"]);
+G2L["7"]["CornerRadius"] = UDim.new(0.1, 10);
+
+
+-- StarterGui.ScreenGui.CATRIXSCRIPTS02.TextLabel
+G2L["8"] = Instance.new("TextLabel", G2L["2"]);
+G2L["8"]["TextWrapped"] = true;
+G2L["8"]["BorderSizePixel"] = 0;
+G2L["8"]["TextSize"] = 30;
+G2L["8"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["8"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic);
+G2L["8"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["8"]["BackgroundTransparency"] = 1;
+G2L["8"]["Size"] = UDim2.new(0, 200, 0, 50);
+G2L["8"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["8"]["Text"] = [[CATRIX HUB]];
+G2L["8"]["Position"] = UDim2.new(0.24835, 0, 0.36216, 0);
+
+
+-- StarterGui.ScreenGui.CATRIXSCRIPTS02.UIStroke
+G2L["9"] = Instance.new("UIStroke", G2L["2"]);
+G2L["9"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
+G2L["9"]["Thickness"] = 4.8;
+G2L["9"]["Color"] = Color3.fromRGB(255, 255, 255);
+
+
+-- StarterGui.ScreenGui.CATRIXSCRIPTS02.UIStroke.UIGradient
+G2L["a"] = Instance.new("UIGradient", G2L["9"]);
+G2L["a"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 243, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 175, 255))};
+
+
+-- StarterGui.ScreenGui.CATRIXSCRIPTS02.UIDragDetector
+G2L["b"] = Instance.new("UIDragDetector", G2L["2"]);
+
+
+
+-- StarterGui.ScreenGui.CATRIXSCRIPTS02.ImageLabel
+G2L["c"] = Instance.new("ImageLabel", G2L["2"]);
+G2L["c"]["BorderSizePixel"] = 0;
+G2L["c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+-- [ERROR] cannot convert ImageContent, please report to "https://github.com/uniquadev/GuiToLuaConverter/issues"
+G2L["c"]["Image"] = [[rbxassetid://17687447043]];
+G2L["c"]["Size"] = UDim2.new(0, 125, 0, 125);
+G2L["c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["c"]["BackgroundTransparency"] = 1;
+G2L["c"]["Position"] = UDim2.new(0.34371, 0, 0.56111, 0);
+
+
+-- StarterGui.ScreenGui.CATRIXSCRIPTS02.ImageLabel.RotateImageLabel
+G2L["d"] = Instance.new("LocalScript", G2L["c"]);
+G2L["d"]["Name"] = [[RotateImageLabel]];
+
+
+-- StarterGui.ScreenGui.CATRIXSCRIPTS02.TextLabel
+G2L["e"] = Instance.new("TextLabel", G2L["2"]);
+G2L["e"]["TextWrapped"] = true;
+G2L["e"]["BorderSizePixel"] = 0;
+G2L["e"]["TextSize"] = 20;
+G2L["e"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["e"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic);
+G2L["e"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["e"]["BackgroundTransparency"] = 1;
+G2L["e"]["Size"] = UDim2.new(0, 200, 0, 50);
+G2L["e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["e"]["Text"] = [[Cargando...]];
+G2L["e"]["Position"] = UDim2.new(0.24585, 0, 0.88108, 0);
+
+
+-- StarterGui.ScreenGui.CATRIXSCRIPT01
+G2L["f"] = Instance.new("Frame", G2L["1"]);
+G2L["f"]["Visible"] = false;
+G2L["f"]["BorderSizePixel"] = 0;
+G2L["f"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["f"]["Size"] = UDim2.new(0, 570, 0, 370);
+G2L["f"]["Position"] = UDim2.new(0.22727, 0, 0.17733, 0);
+G2L["f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["f"]["Name"] = [[CATRIXSCRIPT01]];
+
+
+-- StarterGui.ScreenGui.CATRIXSCRIPT01.RotateUIGradient
+G2L["10"] = Instance.new("LocalScript", G2L["f"]);
+G2L["10"]["Name"] = [[RotateUIGradient]];
+
+
+-- StarterGui.ScreenGui.CATRIXSCRIPT01.UICorner
+G2L["11"] = Instance.new("UICorner", G2L["f"]);
+G2L["11"]["CornerRadius"] = UDim.new(0.1, 8);
+
+
+-- StarterGui.ScreenGui.CATRIXSCRIPT01.UIGradient
+G2L["12"] = Instance.new("UIGradient", G2L["f"]);
+G2L["12"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(22, 22, 22)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(54, 54, 54))};
+
+
+-- StarterGui.ScreenGui.CATRIXSCRIPT01.ImageLabel
+G2L["13"] = Instance.new("ImageLabel", G2L["f"]);
+G2L["13"]["BorderSizePixel"] = 0;
+G2L["13"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+-- [ERROR] cannot convert ImageContent, please report to "https://github.com/uniquadev/GuiToLuaConverter/issues"
+G2L["13"]["Image"] = [[rbxassetid://80861266490579]];
+G2L["13"]["Size"] = UDim2.new(0, 50, 0, 50);
+G2L["13"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["13"]["Position"] = UDim2.new(0.02201, 0, 0.03409, 0);
+
+
+-- StarterGui.ScreenGui.CATRIXSCRIPT01.ImageLabel.UICorner
+G2L["14"] = Instance.new("UICorner", G2L["13"]);
+G2L["14"]["CornerRadius"] = UDim.new(0.1, 10);
+
+
+-- StarterGui.ScreenGui.CATRIXSCRIPT01.TextLabel
+G2L["15"] = Instance.new("TextLabel", G2L["f"]);
+G2L["15"]["TextWrapped"] = true;
+G2L["15"]["BorderSizePixel"] = 0;
+G2L["15"]["TextSize"] = 30;
+G2L["15"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["15"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic);
+G2L["15"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["15"]["BackgroundTransparency"] = 1;
+G2L["15"]["Size"] = UDim2.new(0, 200, 0, 50);
+G2L["15"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["15"]["Text"] = [[CATRIX HUB]];
+G2L["15"]["Position"] = UDim2.new(0.04386, 0, 0.03243, 0);
+
+
+-- StarterGui.ScreenGui.CATRIXSCRIPT01.TextButton
+G2L["16"] = Instance.new("TextButton", G2L["f"]);
+G2L["16"]["TextWrapped"] = true;
+G2L["16"]["BorderSizePixel"] = 0;
+G2L["16"]["TextSize"] = 30;
+G2L["16"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["16"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["16"]["FontFace"] = Font.new([[rbxasset://fonts/families/Arial.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+G2L["16"]["BorderMode"] = Enum.BorderMode.Middle;
+G2L["16"]["Size"] = UDim2.new(0, 129, 0, 50);
+G2L["16"]["BorderColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["16"]["Text"] = [[executar]];
+G2L["16"]["Position"] = UDim2.new(0.02105, 0, 0.36216, 0);
+
+
+-- StarterGui.ScreenGui.CATRIXSCRIPT01.TextButton.ButtonClickHandler
+G2L["17"] = Instance.new("LocalScript", G2L["16"]);
+G2L["17"]["Name"] = [[ButtonClickHandler]];
+
+
+-- StarterGui.ScreenGui.CATRIXSCRIPT01.TextButton.UICorner
+G2L["18"] = Instance.new("UICorner", G2L["16"]);
+G2L["18"]["CornerRadius"] = UDim.new(0.1, 8);
+
+
+-- StarterGui.ScreenGui.CATRIXSCRIPT01.TextButton.UIStroke
+G2L["19"] = Instance.new("UIStroke", G2L["16"]);
+G2L["19"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
+G2L["19"]["Thickness"] = 4;
+G2L["19"]["Color"] = Color3.fromRGB(255, 255, 255);
+
+
+-- StarterGui.ScreenGui.CATRIXSCRIPT01.TextButton.UIStroke.UIGradient
+G2L["1a"] = Instance.new("UIGradient", G2L["19"]);
+G2L["1a"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 243, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 175, 255))};
+
+
+-- StarterGui.ScreenGui.CATRIXSCRIPT01.TextButton.TextLabel
+G2L["1b"] = Instance.new("TextLabel", G2L["16"]);
+G2L["1b"]["TextWrapped"] = true;
+G2L["1b"]["BorderSizePixel"] = 0;
+G2L["1b"]["TextSize"] = 30;
+G2L["1b"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["1b"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic);
+G2L["1b"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["1b"]["BackgroundTransparency"] = 1;
+G2L["1b"]["Size"] = UDim2.new(0, 155, 0, 50);
+G2L["1b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["1b"]["Text"] = [[Autofarm money]];
+G2L["1b"]["Position"] = UDim2.new(-0.10343, 0, -1.00757, 0);
+
+
+-- StarterGui.ScreenGui.CATRIXSCRIPT01.UIStroke
+G2L["1c"] = Instance.new("UIStroke", G2L["f"]);
+G2L["1c"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
+G2L["1c"]["Thickness"] = 4.8;
+G2L["1c"]["Color"] = Color3.fromRGB(255, 255, 255);
+
+
+-- StarterGui.ScreenGui.CATRIXSCRIPT01.UIStroke.UIGradient
+G2L["1d"] = Instance.new("UIGradient", G2L["1c"]);
+G2L["1d"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 243, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 175, 255))};
+
+
+-- StarterGui.ScreenGui.CATRIXSCRIPT01.TextLabel
+G2L["1e"] = Instance.new("TextLabel", G2L["f"]);
+G2L["1e"]["TextWrapped"] = true;
+G2L["1e"]["BorderSizePixel"] = 0;
+G2L["1e"]["TextSize"] = 30;
+G2L["1e"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["1e"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic);
+G2L["1e"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["1e"]["BackgroundTransparency"] = 1;
+G2L["1e"]["Size"] = UDim2.new(0, 200, 0, 50);
+G2L["1e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["1e"]["Text"] = [[DTI]];
+G2L["1e"]["Position"] = UDim2.new(0.64912, 0, 0.03243, 0);
+
+
+-- StarterGui.ScreenGui.CATRIXSCRIPT01.UIDragDetector
+G2L["1f"] = Instance.new("UIDragDetector", G2L["f"]);
+
+
+
+-- StarterGui.ScreenGui.ToggleCatrixFrames
+G2L["20"] = Instance.new("LocalScript", G2L["1"]);
+G2L["20"]["Name"] = [[ToggleCatrixFrames]];
+
+
+-- StarterGui.ScreenGui.CATRIXSCRIPTS02.RotateUIGradient
+local function C_3()
+local script = G2L["3"];
+	local textButton = script.Parent:FindFirstChildOfClass("TextButton")
+	if textButton then
+	    local uiStroke = textButton:FindFirstChildOfClass("UIStroke")
+	    if uiStroke then
+	        local uiGradient = uiStroke:FindFirstChildOfClass("UIGradient")
+	        if uiGradient then
+	            while true do
+	                uiGradient.Rotation = (uiGradient.Rotation + 1) % 360
+	                task.wait(0.03)
+	            end
+	        end
+	    end
+	end
+	
+	
+end;
+task.spawn(C_3);
+-- StarterGui.ScreenGui.CATRIXSCRIPTS02.ImageLabel.RotateImageLabel
+local function C_d()
+local script = G2L["d"];
+	local imageLabel = script.Parent
+	local RunService = game:GetService("RunService")
+	local rotationSpeed = 180 -- degrees per second
+	
+	local currentRotation = 0
+	
+	RunService.RenderStepped:Connect(function(dt)
+	    currentRotation = currentRotation + rotationSpeed * dt
+	    if currentRotation >= 360 then
+	        currentRotation = currentRotation - 360
+	    end
+	    imageLabel.Rotation = currentRotation
+	end)
+	
+	
+end;
+task.spawn(C_d);
+-- StarterGui.ScreenGui.CATRIXSCRIPT01.RotateUIGradient
+local function C_10()
+local script = G2L["10"];
+	local textButton = script.Parent:FindFirstChildOfClass("TextButton")
+	if textButton then
+	    local uiStroke = textButton:FindFirstChildOfClass("UIStroke")
+	    if uiStroke then
+	        local uiGradient = uiStroke:FindFirstChildOfClass("UIGradient")
+	        if uiGradient then
+	            while true do
+	                uiGradient.Rotation = (uiGradient.Rotation + 4) % 360
+	                task.wait(0.03)
+	            end
+	        end
+	    end
+	end
+	
+	
+end;
+task.spawn(C_10);
+-- StarterGui.ScreenGui.CATRIXSCRIPT01.TextButton.ButtonClickHandler
+local function C_17()
+local script = G2L["17"];
+	local button = script.Parent
+	
+	button.MouseButton1Click:Connect(function()
+		-- LocalScript (StarterPlayerScripts)
+	
+		local player = game.Players.LocalPlayer
+		local character = player.Character or player.CharacterAdded:Wait()
+		local hrp = character:WaitForChild("HumanoidRootPart")
+		local workspace = game:GetService("Workspace")
+	
+		-- 🔹 Duplicar tamaño del HumanoidRootPart
+		hrp.Size = hrp.Size * 2
+	
+		-- Función para obtener todas las partes llamadas "Money"
+		local function getMoneyParts()
+			local parts = {}
+			for _, part in pairs(workspace:GetDescendants()) do
+				if part:IsA("BasePart") and part.Name == "Money" then
+					table.insert(parts, part)
+				end
+			end
+			return parts
+		end
+	
+		-- Loop infinito que teletransporta el personaje cada 0.2s
+		spawn(function()
+			while true do
+				local moneyParts = getMoneyParts()
+				for _, part in pairs(moneyParts) do
+					if character and character.Parent then
+						hrp.CFrame = part.CFrame + Vector3.new(0, 3, 0) -- mover todo el Character con el HRP
+					end
+					wait(0.2)
+				end
+				wait(0.2)
+			end
+		end)
+	
+	end)
+	
+	
+end;
+task.spawn(C_17);
+-- StarterGui.ScreenGui.ToggleCatrixFrames
+local function C_20()
+local script = G2L["20"];
+	local screenGui = script.Parent
+	local catrix01 = screenGui:FindFirstChild("CATRIXSCRIPT01")
+	local catrix02 = screenGui:FindFirstChild("CATRIXSCRIPTS02")
+	
+	task.wait(5)
+	
+	if catrix01 then
+	    catrix01.Visible = true
+	end
+	
+	if catrix02 then
+	    catrix02.Visible = false
+	end
+	
+	
+end;
+task.spawn(C_20);
+
+return G2L["1"], require;
