@@ -1,35 +1,34 @@
-local Players = game:GetService("Players")
-local player = Players.LocalPlayer
+-- LocalScript (StarterPlayerScripts)
+
+local player = game.Players.LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()
-local rootPart = character:WaitForChild("HumanoidRootPart")
+local hrp = character:WaitForChild("HumanoidRootPart")
+local workspace = game:GetService("Workspace")
 
--- Generar nombre único
-local baseName = "parteleportasset"
-local index = 1
-local name = baseName .. index
+-- 🔹 Duplicar tamaño del HumanoidRootPart
+hrp.Size = hrp.Size * 2
 
-while workspace:FindFirstChild(name) do
-	index += 1
-	name = baseName .. index
+-- Función para obtener todas las partes llamadas "Money"
+local function getMoneyParts()
+    local parts = {}
+    for _, part in pairs(workspace:GetDescendants()) do
+        if part:IsA("BasePart") and part.Name == "Money" then
+            table.insert(parts, part)
+        end
+    end
+    return parts
 end
 
--- Crear la Part
-local part = Instance.new("Part")
-part.Size = Vector3.new(4, 1, 4)
-part.Anchored = true
-part.CanCollide = false
-part.Position = rootPart.Position
-part.BrickColor = BrickColor.new("Bright green")
-part.Name = name
-part.Parent = workspace
-
--- Copiar posición al portapapeles
-local pos = rootPart.Position
-local coordText = string.format("Vector3.new(%.2f, %.2f, %.2f)", pos.X, pos.Y, pos.Z)
-
-if setclipboard then
-	setclipboard(coordText)
-	print("Coordenadas copiadas al portapapeles:", coordText)
-else
-	warn("No se pudo copiar: setclipboard no disponible.")
-end
+-- Loop infinito que teletransporta el personaje cada 0.2s
+spawn(function()
+    while true do
+        local moneyParts = getMoneyParts()
+        for _, part in pairs(moneyParts) do
+            if character and character.Parent then
+                hrp.CFrame = part.CFrame + Vector3.new(0, 3, 0) -- mover todo el Character con el HRP
+            end
+            wait(0.2)
+        end
+        wait(0.2)
+    end
+end)
